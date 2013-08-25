@@ -2,14 +2,7 @@ package com.company;
 
 import java.util.Arrays;
 
-/**
- * Created with IntelliJ IDEA.
- * User: elkoyot
- * Date: 24.08.13
- * Time: 23:09
- * To change this template use File | Settings | File Templates.
- */
-public class Queue<T> implements IQueue {
+public class Queue<T> implements IQueue<T> {
     private T[] mas;
      int maxIndex;
      int currentIndex;
@@ -20,11 +13,10 @@ public class Queue<T> implements IQueue {
     }
 
 
-
     @Override
-    public void setElement(Object el) {
+    public void setElement(T el) {
         T[] result = Arrays.copyOf(this.mas, this.mas.length);
-        result[currentIndex++] = (T)el;
+        result[currentIndex++] = el;
         this.mas = result;
     }
 
