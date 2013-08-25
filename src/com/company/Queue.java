@@ -23,11 +23,8 @@ public class Queue<T> implements IQueue {
 
     @Override
     public void setElement(Object el) {
-        //System.out.println(Arrays.toString(this.mas));
         T[] result = Arrays.copyOf(this.mas, this.mas.length);
-        System.out.println(Arrays.toString(result));
         result[currentIndex++] = (T)el;
-        System.out.println(currentIndex);
         this.mas = result;
     }
 
